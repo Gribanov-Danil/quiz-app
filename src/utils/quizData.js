@@ -8,16 +8,16 @@ export const quizData = [
     },
     {
         question: "Б?",
-        a: "А",
-        b: "Б",
-        c: "В",
+        a: "АА",
+        b: "ББ",
+        c: "ВВ",
         correct: "b",
     },
     {
         question: "В?",
-        a: "А",
-        b: "Б",
-        c: "В",
+        a: "ААА",
+        b: "БББ",
+        c: "ВВВ",
         correct: "c",
     },
 ];
