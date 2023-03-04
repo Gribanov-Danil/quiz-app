@@ -1,6 +1,7 @@
 import quizStyles from "./quizTemplate.module.css"
 import {useState} from "react";
 import {getSelectedInputs} from "../../utils/getSelectedInputs";
+import uuid from "react-uuid";
 
 export const QuizTemplate = ({quizData}) => {
     const data = quizData
@@ -36,18 +37,15 @@ export const QuizTemplate = ({quizData}) => {
                             <div className={quizStyles.quiz_header}>
                                 <h2 id="question">{state.quiz.question}</h2>
                                 <ul>
-                                    <li>
-                                        <input type="radio" name="answer" id="a" className="answer"/>
-                                        <label htmlFor="a" id="a_text">{state.quiz.a}</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" name="answer" id="b" className="answer"/>
-                                        <label htmlFor="b" id="b_text">{state.quiz.b}</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" name="answer" id="c" className="answer"/>
-                                        <label htmlFor="c" id="c_text">{state.quiz.c}</label>
-                                    </li>
+                                    {
+                                        state.quiz.answerVariants.map((answer) => (
+                                            <li key={uuid()}>
+                                                <input type="radio" name="answer" id={`${Object.keys(answer)[0]}`} className="answer"/>
+                                                <label htmlFor={`${Object.keys(answer)[0]}`} id={`${Object.keys(answer)[0]}_text`}>{Object.values(answer)[0]}</label>
+                                            </li>
+                                            )
+                                        )
+                                    }
                                 </ul>
                             </div>
                             <button id="submit" onClick={handleUpdatePage}>Submit</button>
