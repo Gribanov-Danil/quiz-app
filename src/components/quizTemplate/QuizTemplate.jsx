@@ -26,7 +26,6 @@ export const QuizTemplate = ({quizData}) => {
         const answerElements = document.querySelectorAll('.answer');
         answerElements.forEach(answerEl => answerEl.checked = false)
     }
-
     return(
         <div className={quizStyles.layout}>
             <div className={quizStyles.quiz_layout}>
@@ -53,7 +52,7 @@ export const QuizTemplate = ({quizData}) => {
                     }
                     {
                         state.currentQuiz > data.length &&
-                        <h2>{`Ваш результат: ${score} баллов из ${quizData.length} вопросов`}</h2>
+                        <h2>{`Ваш результат: ${Math.round(score / data.length  * 100) } %`}</h2>
                     }
 
                 </div>
