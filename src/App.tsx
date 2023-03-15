@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import {QuizTemplate} from "./components/quizTemplate/QuizTemplate";
-import {quizData} from "./utils/quizData";
+import {Panel} from "./components/panel/Panel";
 
 function App() {
   return (
     <div className="App">
-      <QuizTemplate quizData={quizData}/>
+      <Panel/>
     </div>
   );
 }

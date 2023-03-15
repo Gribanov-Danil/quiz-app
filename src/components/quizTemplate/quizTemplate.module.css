@@ -1,26 +1,8 @@
-.quiz_layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.quiz_box{
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-    width: 600px;
-    overflow: hidden;
-}
 .quiz_header{
     padding: 64px;
 }
 
-.layout {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
 ul{
     list-style: none;
     padding: 0;
@@ -32,7 +14,7 @@ ul li{
 ul li label{
     cursor: pointer;
 }
-button{
+.btn{
     background-color: #0563bb;
     border: none;
     display: block;
@@ -43,7 +25,7 @@ button{
     text-transform: uppercase;
     color: #000000;
     padding: 15px;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease-in-out;
 }
 button:hover{
     background-color: #438faa;
