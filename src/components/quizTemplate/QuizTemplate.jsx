@@ -53,7 +53,7 @@ export const QuizTemplate = ({quizData}) => {
             }
             {
                 state.currentQuiz > data.length &&
-                <h2>{`Ваш результат: ${Math.round(score / data.length  * 100) } %`}</h2>
+                <h2 className={quizStyles.result}>{`Ваш результат: ${Math.round(score / data.length  * 100) } %`}</h2>
             }
         </div>
     )

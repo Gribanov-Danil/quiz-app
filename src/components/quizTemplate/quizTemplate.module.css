@@ -1,6 +1,6 @@
 
 .quiz_header{
-    padding: 64px;
+    padding: 75px;
 }
 
 ul{
@@ -54,6 +54,7 @@ ul li label{
 
 .answer_btn {
     background-color: inherit;
+    border-radius: inherit;
     width: 100%;
     border: none;
     font-size: 20px;
@@ -61,13 +62,22 @@ ul li label{
 
 .btn_block_item:nth-child(1) {
     background-color: #882146;
+    border-top-left-radius: 10px;
 }
 .btn_block_item:nth-child(2) {
     background-color: #f8d67d;
+    border-top-right-radius: 10px;
 }
 .btn_block_item:nth-child(3) {
     background-color: #4cbb94;
+    border-bottom-left-radius: 10px;
 }
 .btn_block_item:nth-child(4) {
     background-color: #e55043;
+    border-bottom-right-radius: 10px;
+}
+
+.result {
+    margin: 0;
+    padding: 10px;
 }
