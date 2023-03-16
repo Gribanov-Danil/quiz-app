@@ -2,6 +2,7 @@ import modalStyles from "./modal.module.css"
 import {useEffect} from "react";
 import {createPortal} from "react-dom";
 import {ModalOverlay} from "../modalOverlay/ModalOverlay";
+import { motion } from "framer-motion";
 
 export const Modal = ({active, onClick, children, title}) => {
     useEffect(() => {
@@ -16,7 +17,17 @@ export const Modal = ({active, onClick, children, title}) => {
 
     return createPortal( (
             <ModalOverlay overlayClass={modalOverlayStyle} onClick={onClick}>
-                <div className={modalStyles.modal_content} onClick={(e => e.stopPropagation())}>
+                <motion.div
+                    className={modalStyles.modal_content}
+                    onClick={(e => e.stopPropagation())}
+                    initial={{ opacity: 0, scale: 0.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                        duration: 1.2,
+                        delay: 0.7,
+                        ease: [0, 0.71, 0.2, 1.01]
+                    }}
+                >
                     <div className={`${modalStyles.header}`}>
                         <h2 className={modalStyles.title}>{title}</h2>
                         <div className={modalStyles.close} onClick={onClick}>
@@ -26,7 +37,7 @@ export const Modal = ({active, onClick, children, title}) => {
                         </div>
                     </div>
                     {children}
-                </div>
+                </motion.div>
             </ModalOverlay>
         )
         , document.body

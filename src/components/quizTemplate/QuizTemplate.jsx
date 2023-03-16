@@ -31,7 +31,7 @@ export const QuizTemplate = ({quizData}) => {
         })
     }
     useEffect(() => {
-        if (state.currentQuiz % 2 === 0) {
+        if (state.currentQuiz % 3 === 0) {
             handleToggleModal()
         }
     }, [handleToggleModal, state.currentQuiz])
