@@ -5,10 +5,13 @@ import {motion} from "framer-motion";
 import {Result} from "../result/Result";
 import {Modal} from "../modal/Modal";
 import {InterestingFact} from "../interestingFact/InterestingFact";
+import {facts} from "../../utils/factsData";
 
 export const QuizTemplate = ({quizData}) => {
     const data = quizData
+    const [factsList, setFactsList] = useState(facts)
     const [state, setState] = useState({
+        currentFact: "",
         quiz: data[0],
         currentQuiz: 1
     })
@@ -33,6 +36,12 @@ export const QuizTemplate = ({quizData}) => {
     useEffect(() => {
         if (state.currentQuiz % 3 === 0) {
             handleToggleModal()
+            let fact = factsList[Math.floor(Math.random() * factsList.length)]
+            setState({
+                ...state,
+                currentFact: fact
+            })
+            setFactsList(factsList.filter((currentFact) => currentFact !== fact))
         }
     }, [handleToggleModal, state.currentQuiz])
     return(
@@ -71,7 +80,7 @@ export const QuizTemplate = ({quizData}) => {
                 <Result score={score} totalLength={data.length} />
             }
             <Modal active={isModalVisible} onClick={handleCloseModal} title={`Интересный факт`}>
-                <InterestingFact/>
+                <InterestingFact factText={state.currentFact}/>
             </Modal>
         </div>
     )
