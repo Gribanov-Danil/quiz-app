@@ -34,3 +34,40 @@ ul li label{
     outline: none;
     background-color: #5ec6eb;
 }
+
+.overlay {
+    background: #F9A93F;
+    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+}
+
+.btn_block {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.btn_block_item {
+    width: 50%;
+    height: 75px;
+    display: flex;
+}
+
+.answer_btn {
+    background-color: inherit;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+}
+
+.btn_block_item:nth-child(1) {
+    background-color: #882146;
+}
+.btn_block_item:nth-child(2) {
+    background-color: #f8d67d;
+}
+.btn_block_item:nth-child(3) {
+    background-color: #4cbb94;
+}
+.btn_block_item:nth-child(4) {
+    background-color: #e55043;
+}
