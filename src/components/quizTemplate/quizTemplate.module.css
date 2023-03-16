@@ -27,10 +27,10 @@ ul li label{
     padding: 15px;
     transition: all 0.2s ease-in-out;
 }
-button:hover{
+.btn:hover{
     background-color: #438faa;
 }
-button:focus{
+.btn:focus{
     outline: none;
     background-color: #5ec6eb;
 }

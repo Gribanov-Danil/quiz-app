@@ -1,8 +1,9 @@
 import styles from "./panel.module.css"
 import {QuizTemplate} from "../quizTemplate/QuizTemplate";
 import {quizData} from "../../utils/quizData";
-import {useState} from "react";
+import React, {useState} from "react";
 import { motion } from "framer-motion";
+import {HomeButton} from "../homeButton/HomeButton";
 
 
 export const Panel = () => {
@@ -48,6 +49,7 @@ export const Panel = () => {
                         guessValue && findReplacement && <p>Упс! Что-то пошло не так ¯\_(ツ)_/¯. Пожалуйста, обновите страницу</p>
                     }
                 </div>
+                <HomeButton setFindReplacement={setFindReplacement} setGuessValue={setGuessValue}/>
             </div>
         </div>
     )

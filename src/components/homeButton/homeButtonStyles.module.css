@@ -1,0 +1,10 @@
+.home_ntn {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    border: none;
+    display: block;
+    cursor: pointer;
+    background: #F9A93F;
+    border-radius: 10px;
+}
