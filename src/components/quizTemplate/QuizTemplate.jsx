@@ -2,6 +2,7 @@ import quizStyles from "./quizTemplate.module.css"
 import {useState} from "react";
 import uuid from "react-uuid";
 import {motion} from "framer-motion";
+import {Result} from "../result/Result";
 
 export const QuizTemplate = ({quizData}) => {
     const data = quizData
@@ -53,7 +54,7 @@ export const QuizTemplate = ({quizData}) => {
             }
             {
                 state.currentQuiz > data.length &&
-                <h2 className={quizStyles.result}>{`Ваш результат: ${Math.round(score / data.length  * 100) } %`}</h2>
+                <Result score={score} totalLength={data.length} />
             }
         </div>
     )
