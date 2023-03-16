@@ -1,8 +1,10 @@
 import quizStyles from "./quizTemplate.module.css"
-import {useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import uuid from "react-uuid";
 import {motion} from "framer-motion";
 import {Result} from "../result/Result";
+import {Modal} from "../modal/Modal";
+import {InterestingFact} from "../interestingFact/InterestingFact";
 
 export const QuizTemplate = ({quizData}) => {
     const data = quizData
@@ -11,6 +13,13 @@ export const QuizTemplate = ({quizData}) => {
         currentQuiz: 1
     })
     const [score, setScore] = useState(0)
+    const [isModalVisible, setModalVisible] = useState(false)
+    const handleCloseModal = useCallback( () => {
+        setModalVisible(false)
+    }, [])
+    const handleToggleModal = useCallback( () => {
+        setModalVisible(true)
+    }, [])
     const handleChooseAnswer = (answer) => {
         if (answer === state.quiz.correct) {
             setScore(score + 1)
@@ -21,6 +30,11 @@ export const QuizTemplate = ({quizData}) => {
             currentQuiz: state.currentQuiz + 1
         })
     }
+    useEffect(() => {
+        if (state.currentQuiz % 2 === 0) {
+            handleToggleModal()
+        }
+    }, [handleToggleModal, state.currentQuiz])
     return(
         <div className={quizStyles.overlay}>
             {
@@ -56,6 +70,9 @@ export const QuizTemplate = ({quizData}) => {
                 state.currentQuiz > data.length &&
                 <Result score={score} totalLength={data.length} />
             }
+            <Modal active={isModalVisible} onClick={handleCloseModal} title={`Интересный факт`}>
+                <InterestingFact/>
+            </Modal>
         </div>
     )
 }
