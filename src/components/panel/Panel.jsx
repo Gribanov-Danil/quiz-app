@@ -2,6 +2,7 @@ import styles from "./panel.module.css"
 import {QuizTemplate} from "../quizTemplate/QuizTemplate";
 import {quizData} from "../../utils/quizData";
 import {useState} from "react";
+import { motion } from "framer-motion";
 
 
 export const Panel = () => {
@@ -9,15 +10,32 @@ export const Panel = () => {
     const [findReplacement, setFindReplacement] = useState(false)
     const onGuessValueClick = () => setGuessValue(true)
     const onFindReplacementClick = () => setFindReplacement(true)
+    let boxStyles = !guessValue && !findReplacement ? `${styles.quiz_box} ${styles.quiz_box_menu}` : `${styles.quiz_box}`
     return (
         <div className={styles.layout}>
             <div className={styles.quiz_layout}>
-                <div className={styles.quiz_box} id="quiz">
+                <div className={boxStyles} id="quiz">
                     {
                         !guessValue && !findReplacement &&
                         <>
-                            <button onClick={onGuessValueClick} className={styles.btn}>Игра &laquo;Угадай значение заимствеованного слова&raquo;</button>
-                            <button onClick={onFindReplacementClick} className={styles.btn}>Игра &laquo;Найди замену заиствованному слову&raquo;</button>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.9 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                                onClick={onGuessValueClick}
+                                className={styles.btn}
+                            >
+                                Игра &laquo;Угадай значение заимствеованного слова&raquo;
+                            </motion.button>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                                onClick={onFindReplacementClick}
+                                className={styles.btn}
+                            >
+                                Игра &laquo;Найди замену заиствованному слову&raquo;
+                            </motion.button>
                         </>
                     }
                     {
