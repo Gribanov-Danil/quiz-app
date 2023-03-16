@@ -1,0 +1,30 @@
+.btn {
+    padding: 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background: #F9A93F;
+    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+}
+
+.content {
+    margin: auto;
+}
+
+.head {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.error_discr {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.error_discr:not(:last-child) {
+    margin-bottom: 40px;
+}

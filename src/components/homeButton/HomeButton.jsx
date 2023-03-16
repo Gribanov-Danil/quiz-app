@@ -1,11 +1,7 @@
 import styles from "./homeButtonStyles.module.css"
 import { motion } from "framer-motion";
 
-export const HomeButton = ({setGuessValue, setFindReplacement}) => {
-    const onClick = () => {
-        setGuessValue(false)
-        setFindReplacement(false)
-    }
+export const HomeButton = ({onClick}) => {
     return (
         <motion.button
             onClick={onClick}
