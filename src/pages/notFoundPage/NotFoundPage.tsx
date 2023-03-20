@@ -1,7 +1,8 @@
 import {useNavigate} from "react-router-dom";
 import styles from "./404styles.module.css"
+import {FC} from "react";
 
-export const NotFoundPage = () => {
+export const NotFoundPage: FC = () => {
     const navigate = useNavigate()
     const onClick = () => navigate('/', { replace: true })
     return (

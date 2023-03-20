@@ -1,4 +1,10 @@
-export const quizData = [
+interface IQuizData {
+    question: string
+    answerVariants: any[]
+    correct: string
+}
+
+export const quizData: IQuizData[] = [
     {
         question: "Тимлид",
         answerVariants: [
