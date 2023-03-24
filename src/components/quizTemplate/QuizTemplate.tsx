@@ -1,13 +1,18 @@
 import quizStyles from "./quizTemplate.module.css"
-import {useCallback, useEffect, useState} from "react";
+import {FC, useCallback, useEffect, useState} from "react";
 import uuid from "react-uuid";
 import {motion} from "framer-motion";
 import {Result} from "../result/Result";
 import {Modal} from "../modal/Modal";
 import {InterestingFact} from "../interestingFact/InterestingFact";
 import {facts} from "../../utils/factsData";
+import {IQuizData} from "../../utils/interfaces";
 
-export const QuizTemplate = ({quizData}) => {
+interface IQuizTemplate {
+    quizData: IQuizData[]
+}
+
+export const QuizTemplate: FC<IQuizTemplate> = ({quizData}) => {
     const data = quizData
     const [factsList, setFactsList] = useState(facts)
     const [state, setState] = useState({
@@ -23,7 +28,7 @@ export const QuizTemplate = ({quizData}) => {
     const handleToggleModal = useCallback( () => {
         setModalVisible(true)
     }, [])
-    const handleChooseAnswer = (answer) => {
+    const handleChooseAnswer = (answer: string) => {
         if (answer === state.quiz.correct) {
             setScore(score + 1)
         }
@@ -54,7 +59,7 @@ export const QuizTemplate = ({quizData}) => {
                     </div>
                     <div className={quizStyles.btn_block}>
                         {
-                            state.quiz.answerVariants.map((answer) => (
+                            state.quiz.answerVariants.map((answer: string) => (
                                 <motion.li
                                     key={uuid()}
                                     className={quizStyles.btn_block_item}
