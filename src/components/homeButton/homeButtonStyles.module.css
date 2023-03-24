@@ -8,3 +8,18 @@
     background: #F9A93F;
     border-radius: 10px;
 }
+
+@media (max-width: 680px) {
+    .home_ntn {
+        bottom: 25px;
+        right: 25px;
+    }
+}
+
+@media (max-width: 630px) {
+    .home_ntn {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+

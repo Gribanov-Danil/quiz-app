@@ -53,6 +53,8 @@ ul li label{
 }
 
 .answer_btn {
+    padding: 0;
+    margin: 9px;
     background-color: inherit;
     border-radius: inherit;
     width: 100%;
@@ -75,4 +77,10 @@ ul li label{
 .btn_block_item:nth-child(4) {
     background-color: #e55043;
     border-bottom-right-radius: 10px;
+}
+
+@media (max-width: 420px) {
+    .answer_btn {
+        font-size: 16px;
+    }
 }

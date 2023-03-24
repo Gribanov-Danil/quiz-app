@@ -1,6 +1,10 @@
+.btn_container {
+    display: flex;
+}
+
 .btn {
     width: 50%;
-    height: 40px;
+    min-height: 40px;
     border: none;
     font-size: 20px;
 }
@@ -10,11 +14,17 @@
     padding: 20px;
 }
 
-.btn:nth-child(2) {
+.btn:nth-child(1) {
     background-color: #4cbb94;
     border-bottom-left-radius: 10px;
 }
-.btn:nth-child(3) {
+.btn:nth-child(2) {
     background-color: #e55043;
     border-bottom-right-radius: 10px;
+}
+
+@media (max-width: 680px) {
+    .btn {
+        font-size: 16px;
+    }
 }

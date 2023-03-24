@@ -15,24 +15,27 @@ export const Result: FC<IResult> = ({score, totalLength}) => {
     return (
         <>
             <h2 className={styles.result}>{`Ваш результат: ${Math.round(score / totalLength  * 100) } %`}</h2>
-            <motion.button
-                onClick={onRestartClick}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                className={styles.btn}
-            >
-                Начать заново
-            </motion.button>
-            <motion.button
-                onClick={onHomeClick}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                className={styles.btn}
-            >
-                На главную
-            </motion.button>
+            <div className={styles.btn_container}>
+                <motion.button
+                    onClick={onRestartClick}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                    className={styles.btn}
+                >
+                    Начать заново
+                </motion.button>
+                <motion.button
+                    onClick={onHomeClick}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                    className={styles.btn}
+                >
+                    На главную
+                </motion.button>
+            </div>
+
         </>
 
     )
