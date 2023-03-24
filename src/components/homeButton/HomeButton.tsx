@@ -1,7 +1,12 @@
 import styles from "./homeButtonStyles.module.css"
 import { motion } from "framer-motion";
+import {FC} from "react";
 
-export const HomeButton = ({onClick}) => {
+interface IHomeButton {
+    onClick: () => void
+}
+
+export const HomeButton: FC<IHomeButton> = ({onClick}) => {
     return (
         <motion.button
             onClick={onClick}

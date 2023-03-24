@@ -1,18 +1,24 @@
 import modalStyles from "./modal.module.css"
-import {useEffect} from "react";
+import {FC, ReactNode,useEffect} from "react";
 import {createPortal} from "react-dom";
 import {ModalOverlay} from "../modalOverlay/ModalOverlay";
 import { motion } from "framer-motion";
 
-export const Modal = ({active, onClick, children, title}) => {
+interface IModal {
+    active: boolean
+    onClick: () => void
+    children: ReactNode
+    title: string
+}
+
+export const Modal: FC<IModal> = ({active, onClick, children, title}) => {
     useEffect(() => {
-        const closeOnEscapeKey = e => e.key === "Escape" ? onClick() : null;
+        const closeOnEscapeKey = (e: KeyboardEvent) => e.key === "Escape" ? onClick() : null
         document.body.addEventListener("keydown", closeOnEscapeKey);
         return () => {
             document.body.removeEventListener("keydown", closeOnEscapeKey);
-        };
-    }, [onClick]);
-
+        }
+    }, [onClick])
     const modalOverlayStyle = active ? `${modalStyles.modal} ${modalStyles.active}` : modalStyles.modal
 
     return createPortal( (

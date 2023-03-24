@@ -1,13 +1,15 @@
 import styles from "./panel.module.css"
 import {QuizTemplate} from "../quizTemplate/QuizTemplate";
-import {quizData} from "../../utils/quizData";
+import {guessValueData} from "../../utils/guessValueData";
 import {HomeButton} from "../homeButton/HomeButton";
 import {Route, Routes, useNavigate} from "react-router-dom";
 import {Menu} from "../menu/Menu";
 import {NotFoundPage} from "../../pages/notFoundPage/NotFoundPage";
+import {FC} from "react";
+import {findReplacementData} from "../../utils/findReplacementData";
 
 
-export const Panel = () => {
+export const Panel: FC = () => {
     const navigate = useNavigate()
     const onClick = () => navigate('/', { replace: true })
     return (
@@ -16,7 +18,8 @@ export const Panel = () => {
                 <div className={styles.quiz_box} id="quiz">
                     <Routes>
                         <Route path={'/'} element={<Menu/>}/>
-                        <Route path={'/guessValueGame'} element={<QuizTemplate  quizData={quizData}/>}/>
+                        <Route path={'/guessValueGame'} element={<QuizTemplate  quizData={guessValueData}/>}/>
+                        <Route path={'/findReplacementGame'} element={<QuizTemplate  quizData={findReplacementData}/>}/>
                         <Route path={'*'} element={<NotFoundPage/>}/>
                     </Routes>
                 </div>

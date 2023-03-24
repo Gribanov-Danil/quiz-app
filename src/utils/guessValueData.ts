@@ -1,10 +1,6 @@
-interface IQuizData {
-    question: string
-    answerVariants: any[]
-    correct: string
-}
+import {IQuizData} from "./interfaces";
 
-export const quizData: IQuizData[] = [
+export const guessValueData: IQuizData[] = [
     {
         question: "Тимлид",
         answerVariants: [
