@@ -21,6 +21,8 @@ export const Modal: FC<IModal> = ({active, onClick, children, title}) => {
     }, [onClick])
     const modalOverlayStyle = active ? `${modalStyles.modal} ${modalStyles.active}` : modalStyles.modal
 
+    if (!active) return null
+
     return createPortal( (
             <ModalOverlay overlayClass={modalOverlayStyle} onClick={onClick}>
                 <motion.div
@@ -29,8 +31,7 @@ export const Modal: FC<IModal> = ({active, onClick, children, title}) => {
                     initial={{ opacity: 0, scale: 0.1 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
-                        duration: 1.2,
-                        delay: 0.7,
+                        duration: 1.1,
                         ease: [0, 0.71, 0.2, 1.01]
                     }}
                 >
