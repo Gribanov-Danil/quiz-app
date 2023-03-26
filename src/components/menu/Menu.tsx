@@ -16,7 +16,7 @@ export const Menu: FC = () => {
                 onClick={onGuessValueClick}
                 className={styles.btn}
             >
-                Игра &laquo;Угадай значение заимствеованного слова&raquo;
+                Игра &laquo;Угадай значение заимствованного слова&raquo;
             </motion.button>
             <motion.button
                 whileHover={{ scale: 1.05 }}
