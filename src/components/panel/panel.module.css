@@ -3,7 +3,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-    background-image: url("../../images/background.png");
+    background-image: url("../../images/background.jpg");
 }
 
 .quiz_layout {
