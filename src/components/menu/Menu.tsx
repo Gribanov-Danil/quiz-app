@@ -25,7 +25,7 @@ export const Menu: FC = () => {
                 onClick={onFindReplacementClick}
                 className={styles.btn}
             >
-                Игра &laquo;Найди замену заиствованному слову&raquo;
+                Игра &laquo;Найди замену заимствованному слову&raquo;
             </motion.button>
         </>
     )
